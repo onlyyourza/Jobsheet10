@@ -11,9 +11,8 @@ public class Cinema14 {
         audience[3][1] = "Hana";
 
         System.out.println(audience.length);
-        System.out.println(audience[0].length);
-        System.out.println(audience[1].length);
-        System.out.println(audience[2].length);
-        System.out.println(audience[3].length);
+        for (int i = 0; i < audience.length; i++) {
+            System.out.println("Length of row " + (i + 1) + ": " + audience[i].length   );
+        }
     }
 }
