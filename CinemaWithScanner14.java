@@ -17,18 +17,21 @@ public class CinemaWithScanner14 {
                     System.out.print("Enter name: ");
                     String name = sc.nextLine();
 
-                    System.out.print("Enter row number (1-4): ");
-                    int row = sc.nextInt();
-
-                    System.out.print("Enter column number (1-2): ");
-                    int column = sc.nextInt();
-                    sc.nextLine();
-                    if (row < 1 || row > 4 || column < 1 || column > 2) {
-                        System.out.println("Error: Seat row/column not available!");
-                        break;
-                    }
-                    if (audience[row - 1][column - 1] != null) {
-                        System.out.println("Error: That seat is already taken!");
+                    int row, column;
+                    while (true) {
+                        System.out.print("Enter row number (1-4): ");
+                        row = sc.nextInt();
+                        System.out.print("Enter column number (1-2): ");
+                        column = sc.nextInt();
+                        sc.nextLine();
+                        if (row < 1 || row > 4 || column < 1 || column > 2) {
+                            System.out.println("Error: Seat row/column not available! Try again.\n");
+                            continue;
+                        }
+                        if (audience[row - 1][column - 1] != null) {
+                            System.out.println("Error: That seat is already taken! Choose another seat.\n");
+                            continue;
+                        }
                         break;
                     }
                     audience[row - 1][column - 1] = name;
