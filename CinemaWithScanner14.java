@@ -11,7 +11,7 @@ public class CinemaWithScanner14 {
             System.out.println("3. Exit");
             System.out.print("Choose menu: ");
             choice = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); 
             switch (choice) {
                 case 1:
                     System.out.print("Enter name: ");
@@ -23,7 +23,10 @@ public class CinemaWithScanner14 {
                     System.out.print("Enter column number (1-2): ");
                     int column = sc.nextInt();
                     sc.nextLine();
-
+                    if (row < 1 || row > 4 || column < 1 || column > 2) {
+                        System.out.println("Error: Seat row/column not available!");
+                        break;
+                    }
                     audience[row - 1][column - 1] = name;
                     System.out.println("Audience added successfully!");
                     break;
