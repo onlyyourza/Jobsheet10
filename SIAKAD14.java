@@ -16,6 +16,15 @@ public class SIAKAD14 {
             }
             System.out.println("Average score: " + sumForEachStudent / 3);
         }
+
+        for (int j = 0; j < 3; j++) {
+            double sumForEachCourse = 0;
+
+            for (int i = 0; i < 4; i++) {
+                sumForEachCourse += score[i][j];
+            }
+            System.out.println("Course " + (j + 1) + ": " + (sumForEachCourse / 4));
+        }
     sc.close();
     }
 }
